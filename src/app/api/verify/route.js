@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server';
-import { buildSummary, normalizeBatch, verifyEmails } from '../../../../verify-email.js';
+import { buildSummary, normalizeBatch, verifyEmails } from '../../../lib/verify-email.js';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
+export const maxDuration = 60; // seconds — needed for SMTP checks on Vercel Pro
 
 const MAX_BATCH_SIZE = 500;
 
